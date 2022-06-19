@@ -44,28 +44,31 @@
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
+      button = document.getElementById("todo-submit");
+      input = document.getElementById("todo-input");
+      output = document.getElementById("todo-output");
+
+      // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
+      // Fungsi yang digunakan untuk menambahkan tulisan
+      // Jangan ubah cara deklarasi fungsinya, cukup isi saja
       function fnClickHandler(toDoItem) {
-        output = document.createElement("li");
-        input = document.getElementById("todo-input").value;
-        result = document.createTextNode(input);
-        output.appendChild(result);
-        // print result
-        document.getElementById("todo-input").append(output);
-        // clear input in form
-        document.getElementById("todo-input").value = "";
+        const newLi = document.createElement("li");
+        newLi.textContent = toDoItem;
+        output.appendChild(newLi);
       }
 
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
-      button = document.getElementById("todo-submit");
-      // fungsi fnClickHandler
-      button = addEventListener("click", fnClickHandler);
+      button.addEventListener("click", () => {
+        fnClickHandler(input.value);
+        input.value = "";
+      });
       // TODO: register event onkeypress / addEventListener untuk input
-      keypressbutton = document.getElementById("todo-input");
-      // saat input ditekan untuk menjalankan fungsi fnClickHandler
-      keypressbutton.addEventListener("keypress", (event) => {
-        if (event.key === "Enter" || event.keyCode == 13) {
-          fnClickHandler();
+      // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
+      input.addEventListener("keypress", (event) => {
+        if (event.key == "Enter") {
+          fnClickHandler(input.value);
+          input.value = "";
         }
       });
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
