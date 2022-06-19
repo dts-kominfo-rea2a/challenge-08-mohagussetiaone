@@ -1,0 +1,56 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: blueviolet;
+}
+
+#app {
+  margin: 0vh 75vh;
+  background-color: white;
+  border: 5px;
+  width: 350px;
+  height: 370px;
+  border-radius: 5px;
+}
+
+#app h2 {
+  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+  display: inherit;
+}
+
+#todo-submit {
+  text-align: center;
+  justify-content: center;
+}
+
+#todo-title {
+  border: 5px;
+  background: skyblue;
+  color: black;
+  text-shadow: 1px 1px #808080;
+  font-family: "Courier New", monospace;
+}
+
+#todo-title .h2 {
+  width: 200px;
+}
+
+.field {
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+#todo-submit:hover {
+  cursor: pointer;
+  background-color: #07b94e;
+  color: white;
+}
